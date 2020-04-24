@@ -14,14 +14,14 @@ module.exports.run = async (client, message, args) => {
     let attachment = new Discord.Attachment(img, 'hug.gif');
 
     let embed = new Discord.RichEmbed()
-    .setTitle("...")
-    .setDescription(`${target}, has recibido un abrazo por parte de ${message.author}`)
-    .setColor("#EE82EE")
-    .attachFile(attachment)
-    .setImage(`attachment://hug.gif`)
-    .setFooter("Bot desarrollado por Pabszito#7777");
+        .setTitle("...")
+        .setDescription(`${target}, has recibido un abrazo por parte de ${message.author}`)
+        .setColor("#EE82EE")
+        .attachFile(attachment)
+        .setImage(`attachment://hug.gif`)
+        .setFooter("Bot desarrollado por Pabszito#7777");
 
-    message.channel.send(embed);    
+    message.channel.send(embed);
 }
 
 module.exports.help = {

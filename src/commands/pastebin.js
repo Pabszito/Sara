@@ -12,9 +12,9 @@ const utils = require('../utils.json');
 module.exports.run = async (client, message, args) => {
     let paste = args.slice(0).join(" ")
     let type = args.slice(1).join(" ")
-    
+
     if (!args[0]) return message.channel.send(`${utils.error} Necesitas especiificar algo, ya sea codigo, o un texto comun y corriente..`)
-    
+
     pastebin
         .createPaste(paste, "Post de " + message.author.tag)
         .then(function (data) {

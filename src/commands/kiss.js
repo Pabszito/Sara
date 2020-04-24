@@ -11,14 +11,14 @@ module.exports.run = async (client, message, args) => {
 
     let kiss = await weez.randomBeso();
     let attachment = new Discord.Attachment(kiss, 'kiss.gif')
-    
+
     let embed = new Discord.RichEmbed()
-    .setTitle("...")
-    .setDescription(`${target}, has recibido un beso por parte de ${message.author}`)
-    .setColor("#EE82EE")
-    .attachFile(attachment)
-    .setImage(`attachment://kiss.gif`)
-    .setFooter("Bot desarrollado por Pabszito#7777");
+        .setTitle("...")
+        .setDescription(`${target}, has recibido un beso por parte de ${message.author}`)
+        .setColor("#EE82EE")
+        .attachFile(attachment)
+        .setImage(`attachment://kiss.gif`)
+        .setFooter("Bot desarrollado por Pabszito#7777");
 
     message.channel.send(embed);
 }

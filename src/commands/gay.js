@@ -16,7 +16,7 @@ module.exports.run = async (client, message, args) => {
         .setColor("#EE82EE")
         .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
         .setImage(attachment);
-    
+
     message.channel.send(embed);
 }
 

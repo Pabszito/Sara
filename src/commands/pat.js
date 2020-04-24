@@ -13,14 +13,14 @@ module.exports.run = async (client, message, args) => {
 
     let pat = await weez.randomPat();
     let attachment = new Discord.Attachment(pat, 'pat.gif')
-    
+
     let embed = new Discord.RichEmbed()
-    .setTitle("...")
-    .setDescription(`${target}, ${message.author} ha decidido acariciarte.`)
-    .setColor("#EE82EE")
-    .attachFile(attachment)
-    .setImage(`attachment://pat.gif`)
-    .setFooter("Bot desarrollado por Pabszito#7777");
+        .setTitle("...")
+        .setDescription(`${target}, ${message.author} ha decidido acariciarte.`)
+        .setColor("#EE82EE")
+        .attachFile(attachment)
+        .setImage(`attachment://pat.gif`)
+        .setFooter("Bot desarrollado por Pabszito#7777");
 
     message.channel.send(embed);
 }

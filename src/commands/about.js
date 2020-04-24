@@ -6,7 +6,7 @@ const os = require('os');
 module.exports.run = async (client, message, args) => {
 
     cpustat.usagePercent(function (error, percent, seconds) {
-        
+
         if (error) return console.log(error);
 
         let {version} = require("discord.js");
@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
             .addField("CPU actual:", `${os.cpus().map(i => `${i.model}`)[0]} (${percent.toFixed(2)}% en uso)`, false)
             .setColor("#EE82EE")
             .setFooter('Bot desarrollado por Pabszito#7777', client.user.avatarURL);
-        
+
         message.channel.send(embed);
 
     });

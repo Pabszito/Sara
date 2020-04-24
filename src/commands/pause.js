@@ -1,7 +1,7 @@
 const utils = require('../utils.json')
 
 module.exports.run = async (client, message, args) => {
-    
+
     let serverQueue = message.client.queue.get(message.guild.id);
     if (serverQueue && serverQueue.playing) {
         serverQueue.playing = false;

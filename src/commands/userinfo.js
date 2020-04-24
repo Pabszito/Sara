@@ -1,9 +1,9 @@
 const Discord = require('discord.js');
 const userstatus = {
     online: "<:online:622316661298561034> En linea",
-    idle: "<:idle:622316661336309760> Ausente", 
-    dnd: "<:dnd:622316660745043968> No molestar", 
-    offline: "<:offline:622316661328052226> Desconectado/Invisible" 
+    idle: "<:idle:622316661336309760> Ausente",
+    dnd: "<:dnd:622316660745043968> No molestar",
+    offline: "<:offline:622316661328052226> Desconectado/Invisible"
 }
 
 function checkDays(date) {
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
         .setDescription("Aqui esta la informacion que estabas pidiendo.")
         .addField("Nombre completo:", target.user.tag, false)
         .addField("Bot:", `${target.user.bot ? "Si" : "No"}`, false)
-        .addField("ID:", target.user.id, false) 
+        .addField("ID:", target.user.id, false)
         .addField("Nickname:", `${target.user.nickname ? nickname : "Ninguno"} `, false)
         .addField("Estado:", userstatus[target.user.presence.status], false)
         .addField("Fecha de creacion:", `${target.user.createdAt.toUTCString().substr(0, 16)} (${checkDays(target.user.createdAt)})`, false)

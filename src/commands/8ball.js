@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
         .setTitle("🎱 8ball")
         .setDescription(`Mi respuesta es ${responses[result]}`)
         .setColor("#EE82EE")
-        .setFooter('Bot desarrollado por Pabszito#7777', client.user.avatarURL); 
+        .setFooter('Bot desarrollado por Pabszito#7777', client.user.avatarURL);
 
     message.channel.send(embed);
 }

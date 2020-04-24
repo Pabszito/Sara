@@ -8,9 +8,9 @@ module.exports.run = (client, message, args) => {
     if (!args[0]) {
         return message.channel.send(`${utils.error} Debes especificar algo, ya sea codigo o texto.`)
     }
-    
+
     message.channel.send(`${utils.info} Subiendo, si nunca se obtiene una respuesta es porque Hastebin no se encuentra disponible.`);
-    
+
     hastebin(haste).then(r => {
         let embed = new Discord.RichEmbed()
             .setTitle("Hastebin")

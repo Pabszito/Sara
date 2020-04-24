@@ -53,7 +53,7 @@ module.exports.run = async (client, message, args) => {
             let embed = new Discord.RichEmbed()
                 .setTitle("⛔ Comandos de moderacion")
                 .setDescription(`${prefix}warn <miembro> [razon]: Advierte a un usuario.\n` +
-                    `${prefix}kick <miembro> [razon]: Expulsa a un usuario.\n`+
+                    `${prefix}kick <miembro> [razon]: Expulsa a un usuario.\n` +
                     `${prefix}ban <miembro> [razon]: Banea a un usuario.\n` +
                     `${prefix}clear <cantidad>: Limpia una cierta cantidad de mensajes.`)
                 .setColor("#EE82EE")
@@ -69,10 +69,10 @@ module.exports.run = async (client, message, args) => {
                     `${prefix}pat <miembro>: Dale un poco de cariño a alguien.\n` +
                     `${prefix}kiss <miembro>: Dale un beso a alguien.\n` +
                     `${prefix}meme: Envia un meme aleatorio.\n` +
-                    `${prefix}8ball <pregunta>: 8ball clasico.\n`+
-                    `${prefix}triggered <miembro>: ***triggered***\n`+
-                    `${prefix}gay <miembro>: Una vez cuando tenia 7 años me senté en un plátano, y claro eso cambio mi vida. <3\n`+
-                    `${prefix}basura <miembro>: Wow, esto es basura!\n`+
+                    `${prefix}8ball <pregunta>: 8ball clasico.\n` +
+                    `${prefix}triggered <miembro>: ***triggered***\n` +
+                    `${prefix}gay <miembro>: Una vez cuando tenia 7 años me senté en un plátano, y claro eso cambio mi vida. <3\n` +
+                    `${prefix}basura <miembro>: Wow, esto es basura!\n` +
                     `${prefix}cat: Imagen de un gato aleatorio.`)
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                 .setColor("#EE82EE")
@@ -98,8 +98,8 @@ module.exports.run = async (client, message, args) => {
             msg.delete();
             let embed = new Discord.RichEmbed()
                 .setTitle("🛠 Comandos para desarrolladores")
-                .setDescription(`${prefix}hastebin <texto>: Sube un codigo a hastebin.\n`+
-                `${prefix}pastebin <texto>: Sube un codigo a pastebin.`)
+                .setDescription(`${prefix}hastebin <texto>: Sube un codigo a hastebin.\n` +
+                    `${prefix}pastebin <texto>: Sube un codigo a pastebin.`)
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                 .setColor("#EE82EE")
             message.channel.send(embed)
@@ -109,10 +109,10 @@ module.exports.run = async (client, message, args) => {
             msg.delete();
             let embed = new Discord.RichEmbed()
                 .setTitle("🎵 Comandos de musica")
-                .setDescription(`${prefix}play <cancion>: Reproduce una cancion\n`+
-                `${prefix}skip: Salta a la siguiente cancion en la cola.\n`+
-                `${prefix}stop: Frena el reproductor.\n`+
-                `${prefix}np: Que esta sonando ahora mismo?\n`)
+                .setDescription(`${prefix}play <cancion>: Reproduce una cancion\n` +
+                    `${prefix}skip: Salta a la siguiente cancion en la cola.\n` +
+                    `${prefix}stop: Frena el reproductor.\n` +
+                    `${prefix}np: Que esta sonando ahora mismo?\n`)
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                 .setColor("#EE82EE")
             message.channel.send(embed)
@@ -123,15 +123,15 @@ module.exports.run = async (client, message, args) => {
             if (message.channel.nsfw === true) {
                 let embed = new Discord.RichEmbed()
                     .setTitle("🔞 Comandos NSFW")
-                    .setDescription(`${prefix}neko: Imagen neko aleatoria\n`+
-                    `${prefix}hentai: Imagen hentai aleatoria\n`+
-                    `${prefix}hpussy: Imagen hentai aleatoria (pussy)\n` +
-                    `${prefix}boobs: Imagen de boobs aleatoria\n`+
-                    `${prefix}ass: Imagen de ass aleatoria\n`+
-                    `${prefix}4k: Imagen 4k aleatoria\n`+
-                    `${prefix}anal: Imagen anal aleatoria\n`+
-                    `${prefix}thigh: Imagen thigh aleatoria\n`+
-                    `${prefix}yuri: Imagen yuri aleatoria.`)
+                    .setDescription(`${prefix}neko: Imagen neko aleatoria\n` +
+                        `${prefix}hentai: Imagen hentai aleatoria\n` +
+                        `${prefix}hpussy: Imagen hentai aleatoria (pussy)\n` +
+                        `${prefix}boobs: Imagen de boobs aleatoria\n` +
+                        `${prefix}ass: Imagen de ass aleatoria\n` +
+                        `${prefix}4k: Imagen 4k aleatoria\n` +
+                        `${prefix}anal: Imagen anal aleatoria\n` +
+                        `${prefix}thigh: Imagen thigh aleatoria\n` +
+                        `${prefix}yuri: Imagen yuri aleatoria.`)
                     .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                     .setColor("#EE82EE")
                 message.channel.send(embed)
@@ -150,9 +150,9 @@ module.exports.run = async (client, message, args) => {
             let embed = new Discord.RichEmbed()
                 .setTitle("🛰 Utilidades")
                 .setDescription(`${prefix}morse <texto>: Traduce un texto a codigo morse.\n` +
-                `${prefix}prefix [prefix]: Establece el prefix del servidor o muestra el prefix actual.\n`+
-                `${prefix}say <texto>: Haz que Sara diga algo.\n`+
-                `${prefix}weather <ciudad>: Muestra el clima de una ciudad.`)
+                    `${prefix}prefix [prefix]: Establece el prefix del servidor o muestra el prefix actual.\n` +
+                    `${prefix}say <texto>: Haz que Sara diga algo.\n` +
+                    `${prefix}weather <ciudad>: Muestra el clima de una ciudad.`)
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                 .setColor("#EE82EE")
             message.channel.send(embed)
