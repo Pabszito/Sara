@@ -20,9 +20,10 @@ module.exports.run = async (client, message, args) => {
     target.send(kickedFrom).catch(error => {
         console.error(`No se le pudo enviar un mensaje a ${target.tag}`)
     });
+
     await message.guild.member(target).kick(reason);
 
-    message.channel.send(`${utils.info} ${target.user.tag} fue kickeado del Discord.`);
+    message.channel.send(`${utils.info} ${target.tag} fue kickeado del Discord.`);
 }
 
 module.exports.help = {
