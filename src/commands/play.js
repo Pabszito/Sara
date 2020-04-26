@@ -23,10 +23,10 @@ module.exports.run = async(client, msg, args) => {
     }
 
     if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
-        const playlist = await youtube.getPlaylist(url);
-        const videos = await playlist.getVideos();
-        for (const video of Object.values(videos)) {
-            const video2 = await youtube.getVideoByID(video.id);
+        let playlist = await youtube.getPlaylist(url);
+        let videos = await playlist.getVideos();
+        for (let video of Object.values(videos)) {
+            let video2 = await youtube.getVideoByID(video.id);
             await handleVideo(video2, msg, voiceChannel, true);
         }
         return msg.channel.send(`${utils.info} Se añadio la playlist ${playlist.title} a la cola!`);
@@ -37,7 +37,7 @@ module.exports.run = async(client, msg, args) => {
             try {
                 var videos = await youtube.searchVideos(searchString, 10);
                 let index = 0;
-                const embed = new Discord.RichEmbed()
+                let embed = new Discord.RichEmbed()
                     .setTitle("Selecciona un video")
                     .setDescription("Por favor proporciona un valor para seleccionar uno de los resultados de la busqueda de 1 a 10.")
 
@@ -55,7 +55,7 @@ Por favor proporciona un valor para seleccionar uno de los resultados de la busq
                     console.error(err);
                     return msg.channel.send(`${utils.error} No se obtuvo una respuesta valida.`);
                 }
-                const videoIndex = parseInt(response.first().content);
+                let videoIndex = parseInt(response.first().content);
                 var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
             } catch (err) {
                 console.error(err);
@@ -67,9 +67,9 @@ Por favor proporciona un valor para seleccionar uno de los resultados de la busq
 }
 
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
-    const serverQueue = queue.get(msg.guild.id);
+    let serverQueue = queue.get(msg.guild.id);
     console.log(video);
-    const song = {
+    let song = {
         id: video.id,
         title: Util.escapeMarkdown(video.title),
         url: `https://www.youtube.com/watch?v=${video.id}`
@@ -106,7 +106,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 }
 
 function play(guild, song) {
-    const serverQueue = queue.get(guild.id);
+    let serverQueue = queue.get(guild.id);
 
     if (!song) {
         serverQueue.voiceChannel.leave();
@@ -115,23 +115,23 @@ function play(guild, song) {
     }
     console.log(serverQueue.songs);
 
-    const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
+    let dispatcher = serverQueue.connection.playStream(ytdl(song.url))
         .on('end', reason => {
             if (reason === 'Stream is not generating quickly enough.'){
                 console.log('La cancion se ha terminado: '+reason);
             }
-            else console.log(reason);
+            else console.log('Cancion terminada: '+reason);
             serverQueue.songs.shift();
             play(guild, serverQueue.songs[0]);
         })
         .on('error', error => console.error(error));
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
-    const embed = new Discord.RichEmbed()
+    let embed = new Discord.RichEmbed()
         .setTitle("Reproductor")
         .setDescription(`Comenzando a reproducir la cancion ${song.title}!`)
         .setColor("#EE82EE")
-        .setFooter('Bot desarrollado por Pabszito#7790', 'https://cdn.discordapp.com/avatars/549379358914248724/679997bb2c5db236807fa73011e6d98c.png?size=2048');
+        .setFooter('Bot desarrollado por Pabszito#7777', client.user.avatarURL);
     serverQueue.textChannel.send({embed});
 }
 
