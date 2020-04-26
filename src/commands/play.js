@@ -1,12 +1,14 @@
 const Discord = require('discord.js');
-const {Client, Util} = require('discord.js');
+const { Client, Util } = require('discord.js');
+const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const utils = require('../utils.json')
-const ytdlDiscord = require('ytdl-core-discord');
+const keys = require('../storage/botconfig.json')
+const utils = require('../utils.json');
+const youtube = new YouTube(keys.googleapikey); // googleapikey
+const queue = new Map();
 
-module.exports.run = async (client, msg, args) => {
-    if (!args[0]) return msg.channel.send(`${utils.error} Debes especificar una cancion o video!`);
-
+module.exports.run = async(client, msg, args) => {
+    if(!args[0]) return msg.channel.send(`${utils.error} Debes especificar una cancion o video!`);
     const searchString = args.slice(1).join(' ');
     const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
     const serverQueue = queue.get(msg.guild.id);
@@ -23,8 +25,8 @@ module.exports.run = async (client, msg, args) => {
     if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
         const playlist = await youtube.getPlaylist(url);
         const videos = await playlist.getVideos();
-        for (let video of Object.values(videos)) {
-            let video2 = await youtube.getVideoByID(video.id);
+        for (const video of Object.values(videos)) {
+            const video2 = await youtube.getVideoByID(video.id);
             await handleVideo(video2, msg, voiceChannel, true);
         }
         return msg.channel.send(`${utils.info} Se añadio la playlist ${playlist.title} a la cola!`);
@@ -35,7 +37,7 @@ module.exports.run = async (client, msg, args) => {
             try {
                 var videos = await youtube.searchVideos(searchString, 10);
                 let index = 0;
-                let embed = new Discord.RichEmbed()
+                const embed = new Discord.RichEmbed()
                     .setTitle("Selecciona un video")
                     .setDescription("Por favor proporciona un valor para seleccionar uno de los resultados de la busqueda de 1 a 10.")
 
@@ -115,9 +117,10 @@ function play(guild, song) {
 
     const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
         .on('end', reason => {
-            if (reason === 'Stream is not generating quickly enough.') {
-                console.log('La cancion se ha terminado: ' + reason);
-            } else console.log(reason);
+            if (reason === 'Stream is not generating quickly enough.'){
+                console.log('La cancion se ha terminado: '+reason);
+            }
+            else console.log(reason);
             serverQueue.songs.shift();
             play(guild, serverQueue.songs[0]);
         })
@@ -128,9 +131,11 @@ function play(guild, song) {
         .setTitle("Reproductor")
         .setDescription(`Comenzando a reproducir la cancion ${song.title}!`)
         .setColor("#EE82EE")
-        .setFooter('Bot desarrollado por Pabszito#7777', client.user.avatarURL);
+        .setFooter('Bot desarrollado por Pabszito#7790', 'https://cdn.discordapp.com/avatars/549379358914248724/679997bb2c5db236807fa73011e6d98c.png?size=2048');
     serverQueue.textChannel.send({embed});
 }
+
+module.exports.queue = queue;
 
 module.exports.help = {
     name: 'play'
