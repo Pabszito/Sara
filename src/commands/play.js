@@ -6,6 +6,7 @@ const ytdlDiscord = require('ytdl-core-discord');
 
 module.exports.run = async (client, msg, args) => {
     if (!args[0]) return msg.channel.send(`${utils.error} Debes especificar una cancion o video!`);
+
     const searchString = args.slice(1).join(' ');
     const url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
     const serverQueue = queue.get(msg.guild.id);
