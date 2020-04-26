@@ -1,8 +1,10 @@
+// ES language. The languages files WILL NOT be used until version 2.4.5 (or maybe later)
+
 module.exports = {
 
     EMBED_COLOR: '#EE82EE',
     EMBED_FOOTER_IMAGE: '$botavatar',
-    EMBED_FOOTER_TEXT: 'Bot desarrollado por Pabszito#7777'
+    EMBED_FOOTER_TEXT: 'Bot desarrollado por Pabszito#7777',
 
     NO_PERMISSION_USER: ':error: No tienes permisos para ejecutar ese comando',
     NO_PERMISSION_BOT: ':error: No tengo los permisos suficientes para realizar esa accion.',
