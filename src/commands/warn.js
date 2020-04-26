@@ -11,16 +11,20 @@ module.exports.run = async (client, message, args) => {
         if (!reason) return message.channel.send(`${utils.error} Por favor, especifica una razon.`);
         if (!message.guild.member(target).kickable) return message.channel.send(`${utils.error} No puedo advertir al usuario mencionado.`);
 
-        target.send("**Fuiste advertido!**\n" +
-            `Staff: ${message.author}\n` +
-            `Razon: ${reason} \n` +
-            `Servidor: ${message.guild.name}`).catch(console.error);
+        try {
+            target.send("**Fuiste advertido!**\n" +
+                `Staff: ${message.author}\n` +
+                `Razon: ${reason} \n` +
+                `Servidor: ${message.guild.name}`);
+        }catch(error){
+            console.error(error);
+        }
 
         let embed = new Discord.RichEmbed()
             .setTitle("Usuario advertido")
-            .setDescription('Un usuario ha sido advertido!')
+            .setDescription('Lean reglas...')
             .addField("Staff:", message.author.tag, false)
-            .addField("Usuario:", target.user.tag, false)
+            .addField("Usuario:", target.tag, false)
             .addField("Razon:", reason, false)
             .setColor("#EE82EE")
             .setFooter('Bot desarrollado por Pabszito#7777', client.user.avatarURL);

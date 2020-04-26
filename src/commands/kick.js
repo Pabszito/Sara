@@ -3,7 +3,7 @@ const utils = require('../utils.json')
 
 module.exports.run = async (client, message, args) => {
 
-    let target = message.mentions.members.first() || message.guild.member(args[0]);
+    let target = message.mentions.users.first();
     let reason = args[1] ? `${args.slice(1).join()}` : `Ninguna razon especificada`;
 
     if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(`${utils.error} No tienes permisos para ejecutar ese comando.`);
@@ -17,8 +17,10 @@ module.exports.run = async (client, message, args) => {
         .setColor("#EE82EE")
         .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
 
-    await target.send(kickedFrom);
-    target.kick(reason);
+    target.send(kickedFrom).catch(error => {
+        console.error(`No se le pudo enviar un mensaje a ${target.tag}`)
+    });
+    await message.guild.member(target).kick(reason);
 
     message.channel.send(`${utils.info} ${target.user.tag} fue kickeado del Discord.`);
 }
