@@ -83,7 +83,7 @@ module.exports.run = async (client, message, args) => {
             msg.delete();
             let embed = new Discord.RichEmbed()
                 .setTitle("ℹ Comandos de informacion")
-                .setDescription(`${prefix} about: Obten informacion acerca del bot.\n` +
+                .setDescription(`${prefix}about: Obten informacion acerca del bot.\n` +
                     `${prefix}serverinfo: Obten informacion acerca del servidor.\n` +
                     `${prefix}ping: Obten el ping del bot.\n` +
                     `${prefix}userinfo [miembro]: Obtener informacion de un usuario.\n` +
