@@ -1,3 +1,11 @@
+// ADVERTENCIA DE CANCER
+// Este es el peor codigo del mundo
+// xfa no critiquen, lo planeo arreglar pronto
+
+// CANCER WARNING
+// This is the worst code in the world
+// pls don't say anything about it, i'm planing to fix it soon
+
 const http = require('http');
 const express = require('express');
 const app = express();
@@ -25,6 +33,8 @@ const prefixes = require('./storage/prefix.json');
 const utils = require('./utils/utilities.json');
 const DBL = require("dblapi.js");
 const dbl = new DBL(config.topggtoken, client);
+const mh = require('./utils/musichandler');
+const {MusicHandler} = new MusicHandler();
 
 dbl.on('posted', () => {
     console.log('[INFO] Server count posted!');
@@ -34,6 +44,7 @@ dbl.on('error', e => {
     console.log(`[ERROR] Oops! ${e}`);
 });
 
+client.musicHandler = MusicHandler;
 client.queue = new Map();
 client.commands = new Discord.Collection();
 
