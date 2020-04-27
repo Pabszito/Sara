@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const hastebin = require('hastebin-gen');
-const utils = require('../utils.json');
+const utils = require('../utils/utilities.json');
 
 module.exports.run = (client, message, args) => {
     let haste = args.slice(0).join(" ")

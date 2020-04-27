@@ -1,4 +1,4 @@
-const utils = require('../utils.json');
+const utils = require('../utils/utilities.json');
 
 module.exports.run = async (client, message, args) => {
 

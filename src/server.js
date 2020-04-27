@@ -22,7 +22,7 @@ const config = require("./storage/botconfig.json");
 const token = config.token; // Bot token
 const fs = require("fs");
 const prefixes = require('./storage/prefix.json');
-const utils = require('./utils.json');
+const utils = require('./utils/utilities.json');
 const DBL = require("dblapi.js");
 const dbl = new DBL(config.topggtoken, client);
 

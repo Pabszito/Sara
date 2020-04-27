@@ -21,5 +21,7 @@ module.exports = {
 
     PREFIX_EMBED_TITLE: 'Prefix actual',
     PREFIX_EMBED_DESCRIPTION: 'El prefix actual es `$prefix`. Recuerda que puedes cambiarlo utilizando `$prefixprefix  [prefix].`',
-    PREFIX_SET: 'Se establecio el prefix correctamente.'
+    PREFIX_SET: 'Se establecio el prefix correctamente.',
+
+    CANNOT_PLAY_MUSIC_LONGER_THAN: 'No puedo reproducir canciones que duran mas de $hours horas.'
 }

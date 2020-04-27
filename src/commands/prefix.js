@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const prefixes = require('../storage/prefix.json');
-const utils = require('../utils.json');
+const utils = require('../utils/utilities.json');
 const path = require('path');
 
 module.exports.run = async (client, message, args) => {

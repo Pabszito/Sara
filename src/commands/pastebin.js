@@ -7,7 +7,7 @@ const pastebin = new PastebinAPI({
     'api_user_password': botConfig.pastebinuserpassword
 })
 
-const utils = require('../utils.json');
+const utils = require('../utils/utilities.json');
 
 module.exports.run = async (client, message, args) => {
     let paste = args.slice(0).join(" ")

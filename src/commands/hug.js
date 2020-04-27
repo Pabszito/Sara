@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const botconfig = require('../storage/botconfig.json');
-const utils = require('../utils.json');
+const utils = require('../utils/utilities.json');
 const Weez = require('weez');
 const weez = new Weez.WeezAPI(botconfig.weezkey);
 

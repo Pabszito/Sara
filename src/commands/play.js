@@ -3,7 +3,7 @@ const { Client, Util } = require('discord.js');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 const keys = require('../storage/botconfig.json')
-const utils = require('../utils.json');
+const utils = require('../utils/utilities.json');
 const youtube = new YouTube(keys.googleapikey); // googleapikey
 const queue = new Map();
 

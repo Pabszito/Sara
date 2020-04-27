@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const botconfig = require('../storage/botconfig.json');
 var Weez = require('weez');
 var weez = new Weez.WeezAPI(botconfig.weezkey);
-const utils = require('../utils.json');
+const utils = require('../utils/utilities.json');
 
 module.exports.run = async (client, message, args) => {
     let target = message.mentions.users.first();
