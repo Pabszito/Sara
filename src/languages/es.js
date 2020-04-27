@@ -23,5 +23,15 @@ module.exports = {
     PREFIX_EMBED_DESCRIPTION: 'El prefix actual es `$prefix`. Recuerda que puedes cambiarlo utilizando `$prefixprefix  [prefix].`',
     PREFIX_SET: 'Se establecio el prefix correctamente.',
 
-    CANNOT_PLAY_MUSIC_LONGER_THAN: 'No puedo reproducir canciones que duran mas de $hours horas.'
+    CANNOT_PLAY_MUSIC_LONGER_THAN: 'No puedo reproducir canciones que duran mas de $hours horas.',
+    PLAYING: 'Reproduciendo $song...',
+    QUEUE_CLEARED: 'Se limpio la cola de canciones del servidor.',
+    STOPPED: 'Se freno la cancion actual.',
+    SKIPPED: 'Saltando la cancion actual..',
+    UNABLE_TO_JOIN: 'No me pude conectar a tu canal de voz. Por favor comprueba que tenga los permisos adecuados.',
+    LEFT_THE_CHANNEL_AFK: 'Me he salido del canal debido a que estuve mucho tiempo sola o sin reproducir absolutamente nada.',
+    LEFT_THE_CHANNEL_VIA_COMMAND: 'Me he salido del canal de voz.',
+    QUEUE_EMBED_TITLE: 'Cola de canciones',
+    QUEUE_EMBED_DESCRIPTION: 'Las canciones a continuacion se van a reproducir luego de que termine la que esta sonando ahora mismo:',
+    
 }
