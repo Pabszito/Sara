@@ -33,6 +33,7 @@ module.exports = {
     LEFT_THE_CHANNEL_VIA_COMMAND: 'Me he salido del canal de voz.',
     QUEUE_EMBED_TITLE: 'Cola de canciones',
     QUEUE_EMBED_DESCRIPTION: 'Las canciones a continuacion se van a reproducir luego de que termine la que esta sonando ahora mismo:',
+    ERROR_PLAYING_SONG: 'Lamentablemente no pude reproducir la cancion especificada. Por favor asegurate que el video no tenga Copyright y que no sea privado.',
 
     NSFW_EMBEDS_TITLE: '...'
 }
