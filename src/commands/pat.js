@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 
     let target = message.mentions.users.first();
     if (target.id === client.user.id || message.author.id === target.id || !target) target = client.user;
-    
+
     let pat = await weez.randomPat();
     let attachment = new Discord.Attachment(pat, 'pat.gif')
 
