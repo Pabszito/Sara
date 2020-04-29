@@ -6,16 +6,15 @@ const weez = new Weez.WeezAPI(botconfig.weezkey);
 
 module.exports.run = async (client, message, args) => {
     let target = message.mentions.users.first();
-    if (!target) return message.channel.send(`${utils.error} Te abrazaras a ti mismo?`);
-    if (target.id === client.user.id) return message.channel.send(`${utils.error} Conmigo no.`);
-    if (target === message.author) return message.channel.send(`${utils.error} Te intentas abrazar a ti mismo? ok...`);
+    if (!target) target = client.user;
+    if (target === message.author) return message.channel.send(`${utils.error} Te intentas abrazar a ti mismo?`);
 
     let img = await weez.randomAbrazo();
     let attachment = new Discord.Attachment(img, 'hug.gif');
 
     let embed = new Discord.RichEmbed()
         .setTitle("...")
-        .setDescription(`${target}, has recibido un abrazo por parte de ${message.author}`)
+        .setDescription(target.id != client.user.id ? `${target}, has recibido un abrazo por parte de ${message.author}` : `Ten un abrazo de mi parte, ${message.author}.`)
         .setColor("#EE82EE")
         .attachFile(attachment)
         .setImage(`attachment://hug.gif`)
