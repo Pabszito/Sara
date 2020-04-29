@@ -8,8 +8,8 @@ module.exports.run = async (client, message, args) => {
         .query({limit: 800});
 
     let embed = new Discord.RichEmbed()
-        .setTitle(`[${body.title}](${body.postLink})`)
-        .setDescription(`From subreddit: ${body.subreddit}`)
+        .setTitle(`${body.title}`)
+        .setURL(body.postLink)
         .setImage(body.url)
         .setColor("#EE82EE")
         .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
