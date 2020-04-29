@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
         .setColor("#EE82EE")
         .attachFile(attachment)
         .setImage(`attachment://pat.gif`)
-        .setFooter("Bot desarrollado por Pabszito#7777");
+        .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
 
     message.channel.send(embed);
 }
