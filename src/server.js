@@ -6,24 +6,6 @@
 // This is the worst code in the world
 // pls don't say anything about it, i'm planing to fix it soon
 
-const http = require('http');
-const express = require('express');
-const app = express();
-
-app.get("/", function (request, response) {
-    response.sendFile(__dirname + '/src/html/404.html');
-});
-
-app.get("/", (request, response) => {
-    response.sendStatus(200);
-});
-
-app.listen(process.env.PORT);
-
-setInterval(() => {
-    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("./storage/botconfig.json");
