@@ -46,6 +46,7 @@
     "weather-js": "^2.0.0",
     "weeb-wrapper": "^1.3.2",
     "weez": "^1.5.7",
+    "ytdl-core": "^2.1.1",
     "zuikaku": "^1.2.1"
   }
 }
