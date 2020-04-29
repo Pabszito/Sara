@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const superagent = require('superagent');
-const utils = require('../utils/utilities.json');
+const utils = require('../../utils/utilities.json');
 const nekoslife = require('nekos.life');
 const neko = new nekoslife();
 
