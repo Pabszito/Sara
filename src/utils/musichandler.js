@@ -5,6 +5,7 @@ const ytdl = require('ytdl-core');
 const Discord = require("discord.js");
 const queue = new Map();
 const utils = require('../utils/utilities.json');
+var connection;
 
 async function handleVideo(video, message, voiceChannel, playlist = false) {
 
@@ -42,12 +43,13 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
 
         try {
             message.channel.send(`${utils.info} Reproduciendo \`${song.title}\`...`)
-            queueConstruct.connection = await voiceChannel.join();
+            connection = await voiceChannel.join();
+            queueConstruct.connection = connection;
             await play(message.guild, queueConstruct.songs[0], message);
         } catch (error) {
             console.error(`I could not join the voice channel: ${error}`);
             queue.delete(message.guild.id);
-            return message.channel.send(`${utils.error} ${error}`);
+            return message.channel.send(`${utils.error} Ocurrio un error al reproducir la cancion especificada.\nDetalles: ${error}`);
         }
     } else {
         serverQueue.songs.push(song);
@@ -77,7 +79,7 @@ async function play(guild, song, msg) {
                     await play(guild, serverQueue.songs[0], msg)
                 }})
             .on('error', error => {
-                msg.channel.send(":x: I have encountered an error trying to play the requested song, make sure the video isn't copyright striked and it isn't private.")
+                msg.channel.send(`${utils.error} Ocurrio un error mientras reproducia esa cancion, por favor asegurate de que el video no tenga una reclamacion de derechos de autor y que no sea privado.`)
                 dispatcher.end()
                 console.error(error)
             });
