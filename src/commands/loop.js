@@ -10,6 +10,6 @@ module.exports.run = async(client, message, args) => {
         return message.channel.send(`${utils.error} No hay nada reproduciendose ahora mismo.`)
     } else {
         serverQueue.loop = !serverQueue.loop;
-        return message.channel.send(`${utils.info} Se ${serverQueue.loop ? "habilito" : "deshabilito."} el loop.`);
+        return message.channel.send(`${utils.info} Se ${serverQueue.loop ? "habilito" : "deshabilito"} el loop.`);
     }
 }

@@ -17,12 +17,15 @@ module.exports.run = async(client, message, args) => {
     } else if (args[0]) {
         try{
             parseInt(args[0]);
-            if(args[0] > 100){
+            if(args[0] > 200){
                 return message.channel.send(`${utils.error} El volumen especificado es muy alto!`)
             }
+            if(args[0] > 100){
+                message.channel.send(`${utils.warning} Escuchar a un volumen tan alto **no es recomendado**!`)
+            }
             serverQueue.volume = args[0];
-            await serverQueue.connection.dispatcher.setVolume(volume / 100);
-            message.channel.send(`${utils.info} Volumen establecido a \`${volume}\`.`)
+            await serverQueue.connection.dispatcher.setVolume(args[0] / 100);
+            message.channel.send(`${utils.info} Volumen establecido a \`${args[0]}\`.`)
         }catch(err){
             return message.channel.send(`${utils.error} El volumen especificado no es valido.`);
         }
