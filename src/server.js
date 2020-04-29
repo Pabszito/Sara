@@ -33,8 +33,6 @@ const prefixes = require('./storage/prefix.json');
 const utils = require('./utils/utilities.json');
 const DBL = require("dblapi.js");
 const dbl = new DBL(config.topggtoken, client);
-const mh = require('./utils/musichandler');
-const {MusicHandler} = new MusicHandler();
 
 dbl.on('posted', () => {
     console.log('[INFO] Server count posted!');
@@ -44,7 +42,6 @@ dbl.on('error', e => {
     console.log(`[ERROR] Oops! ${e}`);
 });
 
-client.musicHandler = MusicHandler;
 client.queue = new Map();
 client.commands = new Discord.Collection();
 
@@ -79,7 +76,7 @@ client.on("message", async message => {
 
     let prefix = "s!";
 
-    if (prefixes.hasOwnProperty("g" + message.guild.id)) {
+    if (message.guild && prefixes.hasOwnProperty("g" + message.guild.id)) {
         prefix = prefixes["g" + message.guild.id];
     }
 
