@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const { Client, Util } = require('discord.js');
+const { Client, Util, RichEmbed } = require('discord.js');
 const utils = require('../utils/utilities.json');
 const handler = require('../utils/musichandler').modules;
 const ytdl = require("ytdl-core");
