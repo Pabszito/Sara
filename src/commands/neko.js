@@ -5,10 +5,10 @@ const neko = new nekoslife();
 module.exports.run = async (client, message, args) => {
 
     if (message.channel.nsfw === true) {
-        let nekoimg = await neko.nsfw.neko();
+        let neko = await neko.nsfw.neko();
         let embed = new Discord.RichEmbed()
             .setTitle("...")
-            .setImage(nekoimg.url)
+            .setImage(neko.url)
             .setColor("#EE82EE")
             .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
         message.channel.send(embed)
