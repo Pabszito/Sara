@@ -7,16 +7,14 @@ const utils = require('../utils/utilities.json');
 module.exports.run = async (client, message, args) => {
 
     let target = message.mentions.users.first();
-    if (message.author === target) return message.channel.sendMessage(`${utils.error} Te acaricias a ti mismo?`);
-    if (target.id === client.user.id) return message.channel.sendMessage(`${utils.error} Conmigo no.`);
-    if (!target) return message.channel.send(`${utils.error} Debes mencionar a alguien.`);
-
+    if (target.id === client.user.id || message.author.id === target.id || !target) target = client.user;
+    
     let pat = await weez.randomPat();
     let attachment = new Discord.Attachment(pat, 'pat.gif')
 
     let embed = new Discord.RichEmbed()
         .setTitle("...")
-        .setDescription(`${target}, ${message.author} ha decidido acariciarte.`)
+        .setDescription(message.author.id != client.user.id ? `${message.author} te acaricio, ${target}.` : `Ten una palmadita de mi parte, ${target}.`)
         .setColor("#EE82EE")
         .attachFile(attachment)
         .setImage(`attachment://pat.gif`)
