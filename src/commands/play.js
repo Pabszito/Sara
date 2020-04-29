@@ -19,8 +19,8 @@ module.exports.run = async(client, message, args) => {
   var secs = info.player_response.videoDetails.lengthSeconds % 60;
   var hours = Math.floor(info.player_response.videoDetails.lengthSeconds / 60 / 60);
   
-  if (minutes > 20) return message.channel.send(`${utils.error} That video is too long!`)
-  if (hours > 1) return message.channel.send(`${utils.error} That video is too long!`)
+  if (minutes > 20) return message.channel.send(`${utils.error} ¡Ese vídeo es muy largo!`)
+  if (hours > 1) return message.channel.send(`${utils.error} ¡Ese vídeo es muy largo!`)
   
   let connection = await message.member.voiceChannel.join();
   let dispatcher = await connection.playStream(ytdl(args[0], { filter: 'audioonly' }));
