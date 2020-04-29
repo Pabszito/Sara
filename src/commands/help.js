@@ -65,7 +65,7 @@ module.exports.run = async (client, message, args) => {
             msg.delete();
             let embed = new Discord.RichEmbed()
                 .setTitle("🍿 Comandos de entretenimiento")
-                .setDescription(`${prefix}!hug <miembro>: Abraza a un usuario\n` +
+                .setDescription(`${prefix}hug <miembro>: Abraza a un usuario\n` +
                     `${prefix}pat <miembro>: Dale un poco de cariño a alguien.\n` +
                     `${prefix}kiss <miembro>: Dale un beso a alguien.\n` +
                     `${prefix}meme: Envia un meme aleatorio.\n` +
