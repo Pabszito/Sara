@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const cpustat = require('cpu-stat');
 const os = require('os');
 
-
 module.exports.run = async (client, message, args) => {
 
     cpustat.usagePercent(function (error, percent, seconds) {
@@ -11,11 +10,10 @@ module.exports.run = async (client, message, args) => {
 
         let {version} = require("discord.js");
         let embed = new Discord.RichEmbed()
-            .setTitle("Acerca de")
-            .setDescription("Aqui obtendras informacion acerca del bot.")
+            .setTitle("Acerca de Sara")
             .addField("Libreria:", "discord.js", true)
             .addField("Version:", "2.4.1", true)
-            .addField("Host:", "Microsoft Azure (8 GB VM, 2 vCores)", true)
+            .addField("Host:", "Microsoft Azure", true)
             .addField("Hecho por:", "Pabszito#7777", true)
             .addField("Plataforma:", os.platform, true)
             .addField("Arquitectura:", os.arch, true)
@@ -27,7 +25,6 @@ module.exports.run = async (client, message, args) => {
             .setFooter('Bot desarrollado por Pabszito#7777', client.user.avatarURL);
 
         message.channel.send(embed);
-
     });
 }
 
