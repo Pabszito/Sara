@@ -53,7 +53,7 @@ async function handleVideo(video, message, voiceChannel, playlist = false) {
         }
     } else {
         serverQueue.songs.push(song);
-        return playlist ? message.channel.send(`${utils.info} Se añadio \`${song.title}\` a la cola!`) : null;
+        return message.channel.send(`${utils.info} Se añadio \`${song.title}\` a la cola!`);
     }
     return null;
 }
