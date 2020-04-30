@@ -15,3 +15,7 @@ module.exports.run = async(client, message, args) => {
         message.channel.send(`${utils.info} Cancion pausada. Usa \`s!resume\` para reanudarla.`);
     }
 }
+
+module.exports.help = {
+    name: 'pause'
+}

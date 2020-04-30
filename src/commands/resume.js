@@ -16,3 +16,7 @@ module.exports.run = async(client, message, args) => {
         return message.channel.send(`${utils.error} No hay nada sonando en este servidor!`)
     }
 }
+
+module.exports.help = {
+    name: 'resume'
+}
