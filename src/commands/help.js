@@ -108,8 +108,7 @@ module.exports.run = async (client, message, args) => {
             msg.delete();
             let embed = new Discord.RichEmbed()
                 .setTitle("🛰 Utilidades")
-                .setDescription(`${prefix}morse <texto>: Traduce un texto a codigo morse.\n` +
-                    `${prefix}prefix [prefix]: Establece el prefix del servidor o muestra el prefix actual.\n` +
+                .setDescription(`${prefix}prefix [prefix]: Establece el prefix del servidor o muestra el prefix actual.\n` +
                     `${prefix}say <texto>: Haz que Sara diga algo.\n` +
                     `${prefix}weather <ciudad>: Muestra el clima de una ciudad.\n`+
                     `${prefix}pastebin <texto>: Sube codigo a pastebin!\n`+
