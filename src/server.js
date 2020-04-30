@@ -1,11 +1,3 @@
-// ADVERTENCIA DE CANCER
-// Este es el peor codigo del mundo
-// xfa no critiquen, lo planeo arreglar pronto
-
-// CANCER WARNING
-// This is the worst code in the world
-// pls don't say anything about it, i'm planing to fix it soon
-
 const Discord = require('discord.js');
 const client = new Discord.Client({disableEveryone: true});
 const config = require("./storage/botconfig.json");
