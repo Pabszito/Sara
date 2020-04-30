@@ -6,7 +6,7 @@
 [![Lib](https://top.gg/api/widget/lib/549379358914248724.svg)](https://top.gg/bot/549379358914248724)
 
 # Sara
-Sara es un bot principalmente de entretenimiento que permite que los usuarios de tu servidor de Discord se diviertan en tu servidor. Aunque esta no es la unica funcion de ella, sino que tambien tiene comandos de utilidad, comandos para desarrollos (subir codigo a hastebin o pastebin desde Discord), entre muchas otras cosas.
+Sara es un bot principalmente de entretenimiento que permite que los usuarios de tu servidor de Discord se diviertan en tu servidor. Aunque esta no es la unica funcion de ella, sino que tambien tiene comandos de utilidad, comandos para desarrolladores (subir codigo a hastebin o pastebin desde Discord), entre muchas otras cosas.
 ## Informacion
 El bot actualmente esta hosteado en Microsoft Azure. La informacion de la VM (Virtual Machine) que usamos es la siguiente:
 ```
