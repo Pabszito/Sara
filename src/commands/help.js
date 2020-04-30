@@ -79,7 +79,6 @@ module.exports.run = async (client, message, args) => {
                     `${prefix}serverinfo: Obten informacion acerca del servidor.\n` +
                     `${prefix}ping: Obten el ping del bot.\n` +
                     `${prefix}userinfo [miembro]: Obtener informacion de un usuario.\n` +
-                    `${prefix}links: Links relacionados al bot.\n` +
                     `${prefix}changelog: Lista de cambios desde la version 2.4.1\n` +
                     `${prefix}support: Encontraste un bug? Dudas? Puedes usar este comando para obtener el Discord de soporte, nuestro GitHub, y el tag del creador en caso de encontrar algun bug de seguridad.`)
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
