@@ -5,8 +5,11 @@ var weez = new Weez.WeezAPI(botconfig.weezkey);
 const utils = require('../utils/utilities.json');
 
 module.exports.run = async (client, message, args) => {
+
     let target = message.mentions.users.first();
     if (message.mentions.users.size < 1) target = message.author;
+
+    if(target.id === client.user.id) return message.channel.send(`${utils.error} No, conmigo no.`);
 
     let gay = await weez.rainbow(target.avatarURL);
 
@@ -15,7 +18,8 @@ module.exports.run = async (client, message, args) => {
         .setTitle("...")
         .setColor("#EE82EE")
         .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
-        .setImage(attachment);
+        .attachFile(attachment)
+        .setImage('attachment://gay.png');
 
     message.channel.send(embed);
 }
