@@ -7,19 +7,25 @@ const utils = require('../utils/utilities.json');
 module.exports.run = async (client, message, args) => {
 
     let target = message.mentions.users.first();
-    if (!target || target.id === client.user.id || message.author.id === target.id) target = client.user;
 
     let pat = await weez.randomPat();
     let attachment = new Discord.Attachment(pat, 'pat.gif')
 
     let embed = new Discord.RichEmbed()
         .setTitle("...")
-        .setDescription(message.author.id != client.user.id ? `${message.author} te acaricio, ${target}.` : `Ten una palmadita de mi parte, ${target}.`)
         .setColor("#EE82EE")
         .attachFile(attachment)
         .setImage(`attachment://pat.gif`)
         .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
 
+    if(target.id === client.user.id){
+        embed.setDescription(`Por que me acaricias?`);
+    }else if(!target){
+        embed.setDescription(`Ten una palmadita de mi parte, ${message.author}`)
+    }else{
+        embed.setDescription(`${target}, has recibido una palmadita por parte de ${message.author}`)
+    }
+    
     message.channel.send(embed);
 }
 
