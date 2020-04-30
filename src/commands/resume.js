@@ -12,6 +12,9 @@ module.exports.run = async(client, message, args) => {
         serverQueue.connection.dispatcher.resume();
         message.channel.send(`${utils.info} Se reanudo la cancion actual.`)
     }
+    if(serverQueue.playing){
+        message.channel.send(`${utils.error} La cancion ya esta sonando!`)
+    }
     if(!serverQueue) {
         return message.channel.send(`${utils.error} No hay nada sonando en este servidor!`)
     }
