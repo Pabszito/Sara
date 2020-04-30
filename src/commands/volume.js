@@ -1,6 +1,6 @@
-// https://media.discordapp.net/attachments/704161623698309141/705102641838948432/unknown.png
 const Discord = require('discord.js');
 const handler = require('../utils/musichandler').modules;
+const utils = require('../utils/utilities.json');
 
 module.exports.run = async(client, message, args) => {
 

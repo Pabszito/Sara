@@ -16,9 +16,7 @@ module.exports.run = async (client, message, args) => {
             "⛔ : Comandos de moderacion\n" +
             "🍿 : Comandos de entretenimiento\n" +
             "ℹ : Comandos de informacion\n" +
-            "🛠 : Comandos dedicados a los desarrolladores y configuraciones\n" +
             "🎵 : Comandos de musica\n" +
-            "🔞 : Comandos NSFW (18+)\n" +
             "🛰 : Utilidades o otros")
         .setColor("#EE82EE")
         .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
@@ -27,25 +25,19 @@ module.exports.run = async (client, message, args) => {
         await msg.react("⛔")
         await msg.react("🍿")
         await msg.react("ℹ")
-        await msg.react("🛠")
         await msg.react("🎵")
-        await msg.react("🔞")
         await msg.react("🛰")
 
         let moderationFilter = (reaction, user) => reaction.emoji.name === '⛔' && user.id === message.author.id;
         let entertainmentFilter = (reaction, user) => reaction.emoji.name === '🍿' && user.id === message.author.id;
         let informationFilter = (reaction, user) => reaction.emoji.name === 'ℹ' && user.id === message.author.id;
-        let devFilter = (reaction, user) => reaction.emoji.name === '🛠' && user.id === message.author.id;
         let musicFilter = (reaction, user) => reaction.emoji.name === '🎵' && user.id === message.author.id;
-        let nsfwFilter = (reaction, user) => reaction.emoji.name === '🔞' && user.id === message.author.id;
         let utilFilter = (reaction, user) => reaction.emoji.name === '🛰' && user.id === message.author.id;
 
         let moderation = msg.createReactionCollector(moderationFilter, {time: 60000});
         let entertainment = msg.createReactionCollector(entertainmentFilter, {time: 60000});
         let info = msg.createReactionCollector(informationFilter, {time: 60000});
-        let dev = msg.createReactionCollector(devFilter, {time: 60000});
         let music = msg.createReactionCollector(musicFilter, {time: 60000});
-        let nsfw = msg.createReactionCollector(nsfwFilter, {time: 60000});
         let util = msg.createReactionCollector(utilFilter, {time: 60000});
 
         moderation.on('collect', r => {
@@ -94,7 +86,7 @@ module.exports.run = async (client, message, args) => {
             message.channel.send(embed)
         })
 
-        dev.on('collect', r => {
+        /*dev.on('collect', r => {
             msg.delete();
             let embed = new Discord.RichEmbed()
                 .setTitle("🛠 Comandos para desarrolladores")
@@ -103,7 +95,7 @@ module.exports.run = async (client, message, args) => {
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                 .setColor("#EE82EE")
             message.channel.send(embed)
-        })
+        })*/
 
         music.on('collect', r => {
             msg.delete();
@@ -112,37 +104,13 @@ module.exports.run = async (client, message, args) => {
                 .setDescription(`${prefix}play <cancion>: Reproduce una cancion\n` +
                     `${prefix}skip: Salta a la siguiente cancion en la cola.\n` +
                     `${prefix}stop: Frena el reproductor.\n` +
-                    `${prefix}np: Que esta sonando ahora mismo?\n`)
+                    `${prefix}queue: Te dice que cancion esta a continuacion y la que esta sonando ahora mismo.\n` +
+                    `${prefix}pause: Tu mama te dijo que vayas a sacar la basura? Puedes pausar la cancion para escucharla luego!\n`+
+                    `${prefix}resume: Volviste? Reanuda la cancion para poder seguirla donde la dejaste!\n`+
+                    `${prefix}volume [volume]: Muestra el volumen actual, o establecelo a uno distinto.`)
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                 .setColor("#EE82EE")
             message.channel.send(embed)
-        })
-
-        nsfw.on('collect', r => {
-            msg.delete();
-            if (message.channel.nsfw === true) {
-                let embed = new Discord.RichEmbed()
-                    .setTitle("🔞 Comandos NSFW")
-                    .setDescription(`${prefix}neko: Imagen neko aleatoria\n` +
-                        `${prefix}hentai: Imagen hentai aleatoria\n` +
-                        `${prefix}hpussy: Imagen hentai aleatoria (pussy)\n` +
-                        `${prefix}boobs: Imagen de boobs aleatoria\n` +
-                        `${prefix}ass: Imagen de ass aleatoria\n` +
-                        `${prefix}4k: Imagen 4k aleatoria\n` +
-                        `${prefix}anal: Imagen anal aleatoria\n` +
-                        `${prefix}thigh: Imagen thigh aleatoria\n` +
-                        `${prefix}yuri: Imagen yuri aleatoria.`)
-                    .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
-                    .setColor("#EE82EE")
-                message.channel.send(embed)
-            } else {
-                let embed = new Discord.RichEmbed()
-                    .setTitle("🔞 Comandos NSFW")
-                    .setDescription("Este menu de ayuda solo es visible en los canales NSFW (Not safe/situable for work).")
-                    .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
-                    .setColor("#EE82EE")
-                message.channel.send(embed)
-            }
         })
 
         util.on('collect', r => {
@@ -152,7 +120,9 @@ module.exports.run = async (client, message, args) => {
                 .setDescription(`${prefix}morse <texto>: Traduce un texto a codigo morse.\n` +
                     `${prefix}prefix [prefix]: Establece el prefix del servidor o muestra el prefix actual.\n` +
                     `${prefix}say <texto>: Haz que Sara diga algo.\n` +
-                    `${prefix}weather <ciudad>: Muestra el clima de una ciudad.`)
+                    `${prefix}weather <ciudad>: Muestra el clima de una ciudad.\n`+
+                    `${prefix}pastebin <texto>: Sube codigo a pastebin!\n`+
+                    `${prefix}hastebin <texto>: Sube codigo a hastebin!`)
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                 .setColor("#EE82EE")
             message.channel.send(embed)
