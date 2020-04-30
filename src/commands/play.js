@@ -4,9 +4,7 @@ const handler = require('../utils/musichandler').modules;
 module.exports.run = async(client, message, args) => {
 
   let voiceChannel = message.member.voiceChannel;
-  if (message.guild.voiceConnection.channel.id !== voiceChannel.id) {
-      return message.channel.send(`${utils.error} Ya estoy siendo utilizada en otro canal de voz!`);
-  }
+
   if (!voiceChannel) {
       return message.channel.send(`${utils.error} Necesitas estar en un canal de voz para hacer eso!`)
   }
