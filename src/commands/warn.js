@@ -12,10 +12,14 @@ module.exports.run = async (client, message, args) => {
         if (!message.guild.member(target).kickable) return message.channel.send(`${utils.error} No puedo advertir al usuario mencionado.`);
 
         try {
-            target.send("**Fuiste advertido!**\n" +
-                `Staff: ${message.author}\n` +
-                `Razon: ${reason} \n` +
-                `Servidor: ${message.guild.name}`);
+            let warned = new Discord.RichEmbed()
+                .setTitle(`Fuiste advertido en ${message.guild.name}`)
+                .addField("Staff", message.author.tag)
+                .addField("Razon", reason)
+                .setColor("#EE82EE")
+                .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
+
+            await target.send(warned)
         }catch(error){
             console.error(error);
         }
