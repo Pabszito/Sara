@@ -18,14 +18,14 @@ module.exports.run = async (client, message, args) => {
         .setImage(`attachment://pat.gif`)
         .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
 
-    if(target.id === client.user.id){
-        embed.setDescription(`Por que me acaricias?`);
-    }else if(!target){
+    if(!target){
         embed.setDescription(`Ten una palmadita de mi parte, ${message.author}`)
+    }else if(target && target.id === client.user.id){
+        embed.setDescription(`Aww, thx`);
     }else{
         embed.setDescription(`${target}, has recibido una palmadita por parte de ${message.author}`)
     }
-    
+
     message.channel.send(embed);
 }
 
