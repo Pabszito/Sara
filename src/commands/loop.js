@@ -13,3 +13,7 @@ module.exports.run = async(client, message, args) => {
         return message.channel.send(`${utils.info} Se ${serverQueue.loop ? "habilito" : "deshabilito"} el loop.`);
     }
 }
+
+module.exports.help = {
+    name: 'loop'
+}
