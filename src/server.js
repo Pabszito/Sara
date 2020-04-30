@@ -7,7 +7,7 @@
 // pls don't say anything about it, i'm planing to fix it soon
 
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({disableEveryone: true});
 const config = require("./storage/botconfig.json");
 const token = config.token; // Bot token
 const fs = require("fs");
