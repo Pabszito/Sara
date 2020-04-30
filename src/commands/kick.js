@@ -17,8 +17,8 @@ module.exports.run = async (client, message, args) => {
         .setColor("#EE82EE")
         .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL);
 
-    target.send(kickedFrom).catch(error => {
-        console.error(`No se le pudo enviar un mensaje a ${target.tag}`)
+    await target.send(kickedFrom).catch(error => {
+        console.error(`[ERROR] No se le pudo enviar un mensaje a ${target.tag}`)
     });
 
     await message.guild.member(target).kick(reason);
