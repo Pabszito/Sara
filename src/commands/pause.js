@@ -8,12 +8,17 @@ module.exports.run = async(client, message, args) => {
         return message.channel.send(`${utils.error} Necesitas estar en un canal de voz para ejecutar ese comando!`);
     }
     if (!serverQueue) {
-        return message.channel.send(`${utils.error} No hay nada sonando ahora mismo!`)
-    } else {
-        serverQueue.playing = false;
-        serverQueue.connection.dispatcher.pause();
-        message.channel.send(`${utils.info} Cancion pausada. Usa \`s!resume\` para reanudarla.`);
+        return message.channel.send(`${utils.error} No hay nada sonando ahora mismo!`);
     }
+
+    if(!serverQueue.playing){
+        return message.channel.send(`${utils.error} La cancion ya esta pausada!`);
+    }
+
+    serverQueue.playing = false;
+    serverQueue.connection.dispatcher.pause();
+    message.channel.send(`${utils.info} Cancion pausada. Usa \`s!resume\` para reanudarla.`);
+
 }
 
 module.exports.help = {
