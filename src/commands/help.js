@@ -108,6 +108,7 @@ module.exports.run = async (client, message, args) => {
                     `${prefix}pause: Tu mama te dijo que vayas a sacar la basura? Puedes pausar la cancion para escucharla luego!\n`+
                     `${prefix}resume: Volviste? Reanuda la cancion para poder seguirla donde la dejaste!\n`+
                     `${prefix}volume [volume]: Muestra el volumen actual, o establecelo a uno distinto.`)
+                .addField("Advertencia", "Los comandos de musica se encuentran bajo desarrollo aun, por lo que tienen errores a veces. No dudes en reportarlos!")
                 .setFooter("Bot desarrollado por Pabszito#7777", client.user.avatarURL)
                 .setColor("#EE82EE")
             message.channel.send(embed)

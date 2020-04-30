@@ -3,7 +3,7 @@ const utils = require('../utils/utilities.json');
 
 module.exports.run = async(client, message, args) => {
     let serverQueue = handler.queue.get(message.guild.id)
-    let voiceChannel = message.member.voice.channel;
+    let voiceChannel = message.member.voiceChannel;
     if (!voiceChannel) {
         return message.channel.send(`${utils.error} Debes estar en un canal de voz para ejecutar ese comando!`)
     }
