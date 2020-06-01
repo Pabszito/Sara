@@ -38,5 +38,4 @@ BCH: qz7ykkpyk5k9az5mqzr6dnf490yar8r0cgvalkdy5x
 ## Licencia
 Sara esta bajo la licencia GNU General Public License v3.0. Puedes leerla [aqui.](https://github.com/Pabszito/Sara/blob/master/LICENSE)
 ## TODO
-[x] Finish release 2.4.0
-[ ] Multi-language (ES/EN)
+- [ ] Multi-language (ES/EN)
