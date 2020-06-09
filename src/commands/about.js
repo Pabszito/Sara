@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args) => {
             .setTitle("Acerca de Sara")
             .addField("Libreria:", "discord.js", true)
             .addField("Version:", "2.4.1", true)
-            .addField("Host:", "Microsoft Azure", true)
+            .addField("Host:", "Glitch", true)
             .addField("Hecho por:", "Pabszito#7777", true)
             .addField("Plataforma:", os.platform, true)
             .addField("Arquitectura:", os.arch, true)
