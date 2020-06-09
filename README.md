@@ -40,3 +40,4 @@ Sara esta bajo la licencia GNU General Public License v3.0. Puedes leerla [aqui.
 ## To-do
 - [ ] Multi-language (ES/EN)
 - [x] Update host info (from Azure to Glitch)
+- [ ] Update to discord.js v12
