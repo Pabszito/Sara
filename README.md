@@ -7,22 +7,8 @@
 
 # Sara
 Sara es un bot principalmente de entretenimiento que permite que los usuarios de tu servidor de Discord se diviertan en tu servidor. Aunque esta no es la unica funcion de ella, sino que tambien tiene comandos de utilidad, comandos para desarrolladores (subir codigo a hastebin o pastebin desde Discord), entre muchas otras cosas.
-## Informacion
-El bot actualmente esta hosteado en Microsoft Azure. La informacion de la VM (Virtual Machine) que usamos es la siguiente:
-```
-OS: Ubuntu 18.04.4 LTS x86_64
-Host: Virtual Machine 7.0
-Kernel: 5.0.0-1036-azure
-CPU: Intel Xeon Platinum 8171M (4) @ 2.095GHz
-GPU: 00:08.0 Microsoft Corporation Hyper-V virtual VGA
-Memory: 32145MB
-Network:
-- Server used: Hosted by AT&T (San Antonio, TX) [1.09 km]
-- Download speed: 2769.94 Mbit/s
-- Upload speed: 1624.56 Mbit/s
-- Ping: 8.829 ms
-(fuente: neofetch, speedtest-cli)
-```
+## Host
+El bot actualmente esta hosteado en Glitch.
 ## Bugs
 Encontraste un bug y deseas reportarlo pero no sabes como? Bueno, para reportar un bug debes ir a la pestaña de [Issues](https://github.com/Pabszito/Sara/issues). Pero claro, primera revisa que el bug no haya reportado antes, para asi hacer todo mas faciles para los desarrolladores. Tambien puedes hacerlo desde [nuestro Discord.](https://discord.gg/kG4QZZU)
 Si eres un desarrollador tambien, puedes crear un [pull request](https://github.com/Pabszito/Sara/pulls) para ayudarnos a arreglarlo.
