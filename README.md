@@ -23,7 +23,7 @@ Network:
 - Ping: 8.829 ms
 (fuente: neofetch, speedtest-cli)
 ```
-## Bugs 🐛
+## Bugs
 Encontraste un bug y deseas reportarlo pero no sabes como? Bueno, para reportar un bug debes ir a la pestaña de [Issues](https://github.com/Pabszito/Sara/issues). Pero claro, primera revisa que el bug no haya reportado antes, para asi hacer todo mas faciles para los desarrolladores. Tambien puedes hacerlo desde [nuestro Discord.](https://discord.gg/kG4QZZU)
 Si eres un desarrollador tambien, puedes crear un [pull request](https://github.com/Pabszito/Sara/pulls) para ayudarnos a arreglarlo.
 ## Pull requests
@@ -39,4 +39,4 @@ BCH: qz7ykkpyk5k9az5mqzr6dnf490yar8r0cgvalkdy5x
 Sara esta bajo la licencia GNU General Public License v3.0. Puedes leerla [aqui.](https://github.com/Pabszito/Sara/blob/master/LICENSE)
 ## To-do
 - [ ] Multi-language (ES/EN)
-- [ ] Update host info (from Azure to Glitch)
+- [x] Update host info (from Azure to Glitch)
