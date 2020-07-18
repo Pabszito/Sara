@@ -1,0 +1,29 @@
+{
+  "name": "sara",
+  "version": "2.5.0",
+  "description": "A discord.js bot.",
+  "main": "src/index.js",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "mongoose": "^5.9.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pabszito/Sara.git"
+  },
+  "keywords": [
+    "template",
+    "discord",
+    "discord.js"
+  ],
+  "author": "Pabszito",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Pabszito/discord-bot-template/issues"
+  },
+  "homepage": "https://github.com/Pabszito/discord-bot-template#readme"
+}
