@@ -1,4 +1,4 @@
-const backend = require('./src/api');
+const backend = require('./src/backend');
 const mongoose = require('mongoose');
 const bot = require('./src/bot/index');
 

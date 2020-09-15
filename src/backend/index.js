@@ -7,7 +7,7 @@ async function start(port) {
 
     const guild = require('./routes/guild');
 
-    app.use('/api', guild());
+    app.use('/backend', guild());
 
     app.listen(port, err => {
         if(err) {
