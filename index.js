@@ -1,9 +1,9 @@
-const backend = require('./src/backend');
+const api = require('./src/api');
 const mongoose = require('mongoose');
 const bot = require('./src/bot/index');
 
 async function start() {
-    await mongoose.connect('MONGODB-URI-GOES-HERE', {
+    await mongoose.connect("mongodb+srv://sara:AHPzbuyxEdAUISQB@sara.yuhrk.mongodb.net/blacklist?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false
@@ -15,8 +15,8 @@ async function start() {
         console.info(`[INFO] Connected to the Mongo database.`)
     });
 
-    await backend.start(80).then(() => console.info(`[INFO] Backend running at port 80`));
+    await api.start(80).then(() => console.info(`[INFO] API running at port 80`));
     await bot.start("TOKEN-GOES-HERE");
 }
 
-start();
+start().then(() => console.info("[INFO] Everything ready"));

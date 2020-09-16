@@ -4,10 +4,6 @@ const guild = require('../../schema/guild');
 
 module.exports = function() {
 
-    router.get('/guild', function(req, res) {
-        res.status(400).send({"message": "Invalid request"});
-    });
-
     router.get('/guild/:guildId', function(req, res) {
         guild.findOne({
             id: req.params.guildId
