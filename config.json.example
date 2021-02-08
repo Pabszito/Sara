@@ -1,0 +1,17 @@
+{
+    "token" : "discord bot token goes here",
+    "database_uri" : "mongodb uri goes here",
+    "prefix" : "prefix also goes here, by default s!",
+    "color" : "color for embeds, by default #4dc3ff",
+    "owner_tag" : "owner tag, for example Pabszito#7786",
+    "developer_list" : [
+        "first developer id, for example 447902653842980875",
+        "second developer id (if any)"
+    ],
+    "default" : {
+        "welcomeMessage" : "Welcome {mention} to {servername}!",
+        "welcomeMessageEnabled" : false,
+        "farewellMessage" : "{mention} left the server",
+        "farewellMessageEnabled" : false
+    }
+}
