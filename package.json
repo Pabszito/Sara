@@ -1,0 +1,31 @@
+{
+  "name": "unknown",
+  "version": "1.0.0",
+  "description": "A discord bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pabszito/supreme-octo-succotash.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Pabszito",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Pabszito/supreme-octo-succotash/issues"
+  },
+  "homepage": "https://github.com/Pabszito/supreme-octo-succotash#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.11.13",
+    "path": "^0.12.7",
+    "puppeteer": "^5.5.0",
+    "valid-url": "^1.0.9"
+  }
+}
