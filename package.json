@@ -23,7 +23,9 @@
   "dependencies": {
     "discord.js": "^12.5.1",
     "fs": "0.0.1-security",
+    "jimp": "^0.16.1",
     "mongoose": "^5.11.13",
+    "node-fetch": "^2.6.1",
     "path": "^0.12.7",
     "puppeteer": "^5.5.0",
     "valid-url": "^1.0.9"
