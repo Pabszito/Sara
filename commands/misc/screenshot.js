@@ -1,20 +1,10 @@
 const Discord = require('discord.js');
       puppeteer = require('puppeteer');
       validurl = require('valid-url'); // there is no need to use a third party library but speedrun screenshot command wr 0.9s Ctrl-C%
+      fs = require('fs');
 
 const getPage = async(url) => {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.goto(url);
-    await page.setViewport({
-      width: 1920,
-      height: 1080
-    });
 
-    const buffer = await page.screenshot({path: `temp/${Date.now()}.png`});
-
-    await browser.close();
-    return buffer;
 }
 
 module.exports = {
@@ -26,9 +16,18 @@ module.exports = {
 
     let startTime = new Date();
     
-    const buffer = await getPage(url).catch(err => {
-       return message.channel.send(":x: Please specify a valid URL.");
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto(url);
+    await page.setViewport({
+      width: 1920,
+      height: 1080
     });
+
+    const path = `./temp/${Date.now()}.png`;
+    const buffer = await page.screenshot({path: path});
+
+    await browser.close();
 
     let endTime = new Date();
 
@@ -45,6 +44,6 @@ module.exports = {
         .setFooter(`Bot developed by ${client.config.owner_tag}`, client.user.displayAvatarURL());
 
     await message.channel.send(embed);
-    buffer.delete();
+    fs.unlink(path).catch(err => console.error(`[ERROR] Unable to delete a screenshot: ${err}`));
   }
 };
