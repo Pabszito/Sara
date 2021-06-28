@@ -33,7 +33,6 @@ module.exports = {
       height: 1080
     });
 
-    const path = `./temp/${Date.now()}.png`;
     const buffer = await page.screenshot();
 
     await browser.close();
