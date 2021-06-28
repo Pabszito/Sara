@@ -106,6 +106,3 @@ dist
 # Configuration
 config.json
 
-# Temporal files
-temp/
-
