@@ -1,29 +1,19 @@
 const fetch = require('node-fetch');
       jimp = require('jimp');
 
-function chunk(str, n) {
-    var ret = [];
-    var i;
-    var len;
-    
-    for(i = 0, len = str.length; i < len; i += n) {
-        ret.push(str.substr(i, n))
-    }
-    
-    return ret;
-};
-
 module.exports = {
     name: "bonzi",
     category: "fun",
     description: "Bonzi is typing...",
     run: async(client, message, args, guild) => {
+        return;
+        // when supreme-octo-succotash but bug
         if(!args[0]) return message.channel.send(":warning: You must specify a message.")
 
         message.channel.send(":white_check_mark: Processing..").then(async(m) => {
             message.channel.startTyping();
 
-            let text = chunk(args.join(" "), 19).join(" ");
+            let text = args.join(" ")
             let bonzi = await jimp.read('./assets/bonzi.png');
             let blank = await jimp.read('./assets/blank.png');
 
