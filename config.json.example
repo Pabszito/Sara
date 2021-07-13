@@ -5,6 +5,7 @@
     "prefix" : "prefix also goes here, by default s!",
     "color" : "color for embeds, by default #4dc3ff",
     "owner_tag" : "owner tag, for example Pabszito#7786",
+    "youtube_together" : "755600276941176913",
     "developer_list" : [
         "first developer id, for example 447902653842980875",
         "second developer id (if any)"
