@@ -1,5 +1,6 @@
 {
     "token" : "discord bot token goes here",
+    "osu_api" : "osu api key, get it from https://osu.ppy.sh/p/api/"
     "database_uri" : "mongodb uri goes here",
     "prefix" : "prefix also goes here, by default s!",
     "color" : "color for embeds, by default #4dc3ff",
